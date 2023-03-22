@@ -1,0 +1,33 @@
+.announcement{
+    display: flex;
+    background-color: teal;
+    height: 30px;
+}
+
+.flash{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flash > p{
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.flash > div{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.flash__button{
+    cursor: pointer;
+}
+
+@media screen and (max-width:650px) {
+    .flash > p{
+        font-size: 18px;
+    }
+}

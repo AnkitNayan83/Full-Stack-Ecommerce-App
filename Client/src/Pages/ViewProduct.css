@@ -1,0 +1,130 @@
+
+.viewProduct{
+    display: flex;
+    padding: 50px;
+    /* background-color: rgba(234, 232, 232, 0.349); */
+}
+
+.viewProduct__image{
+    flex: 1;
+}
+
+.viewProduct__image > img{
+    width: 100%;
+    height: 80vh;
+    object-fit: contain;
+}
+.viewProduct__info{
+    flex: 1;
+    padding: 0 50px;
+}
+
+.viewProduct__info > h1{
+    font-weight: 200;
+}
+
+.viewProduct__info > p{
+    font-size: 20px;
+    margin: 40px 0;
+}
+
+.viewProduct__info > span{
+    font-weight: 100;
+    font-size: 40px;
+}
+
+.viewProduct__filters{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: 30px 0;
+}
+
+.viewProduct__filter{
+    display: flex;
+    align-items: center;
+}
+
+.viewProduct__filter > select{
+    padding: 10px;
+    margin: 0 10px;
+    border-radius: 10%;
+}
+
+viewProduct__filter > span{
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.ViewProductBlack__filter{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+
+.viewProduct__total{
+    margin-top: 50px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.viewProduct__addOrRemove{
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    justify-content: space-between;
+}
+
+.viewProduct__quantity{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid teal;
+    margin: 0 10px;
+}
+
+.viewProduct__total > button{
+    cursor: pointer;
+    padding: 13px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+}
+
+.viewProduct__total > button:hover{
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.459);
+}
+
+@media screen and (max-width:650px) {
+    .viewProduct{
+        flex-direction: column;
+    }
+    .viewProduct__image > img{
+        object-fit: cover;
+        height: 40vh;
+        margin-bottom: 20px;
+    }
+    .viewProduct__info > h1{
+        font-size: 30px;
+    }
+    .viewProduct__info > p{
+        margin: 30px 5px;
+    }
+    .label{
+        margin-left: 10px;
+    }
+
+    .viewProduct__total > button{
+        padding: 1px 35px;
+        margin-left: 10px;
+    }
+
+}
