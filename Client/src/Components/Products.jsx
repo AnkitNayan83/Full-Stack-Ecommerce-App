@@ -13,10 +13,9 @@ export const Products = ({ cat, filters, sort }) => {
       try {
         const res = await axios.get(
           cat
-            ? `http://localhost:8080/api/products?category=${cat}`
-            : `http://localhost:8080/api/products`
+            ? `https://full-stack-ecommerce-o0a6m91tb-ankitnayan83.vercel.app/api/products?category=${cat}`
+            : `https://full-stack-ecommerce-o0a6m91tb-ankitnayan83.vercel.app/api/products`
         );
-        console.log(res);
         setProduct(res.data);
       } catch (err) {
         console.log(err);
