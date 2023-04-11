@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Announcement from "../Components/Announcement";
 import Navbar from "../Components/Navbar";
 import "./Register.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { register } from "../Redux/apiCalls";
+import PacmanLoader from "react-spinners/PacmanLoader";
 
 export const Register = () => {
   const dispatch = useDispatch();
@@ -14,10 +14,22 @@ export const Register = () => {
     e.preventDefault();
     register(dispatch, { username, password, email });
   };
+  const { isFetching, error } = useSelector((state) => state.user);
   return (
     <div className="register">
-      <Announcement />
       <Navbar />
+
+      <div className={isFetching ? "loader_wrapper" : "hide"}>
+        <PacmanLoader
+          loading={isFetching}
+          size={20}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+          className="loader"
+        />
+        <span>Please Wait it's a free server so it take time :( </span>
+      </div>
+
       <div className="register__info">
         <h3>Create Your Account</h3>
         <form action="">

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./Products.css";
-// import { popularProducts } from "../data";
 import { Product } from "./Product";
 import axios from "axios";
 
@@ -8,13 +7,16 @@ export const Products = ({ cat, filters, sort }) => {
   const [product, setProduct] = useState([]);
   const [filteredProduct, setFilteredProduct] = useState([]);
 
+  // `https://full-stack-ecommerce-o0a6m91tb-ankitnayan83.vercel.app/api/products?category=${cat}`
+  // : `https://full-stack-ecommerce-o0a6m91tb-ankitnayan83.vercel.app/api/products`
+
   useEffect(() => {
     const getProduct = async () => {
       try {
         const res = await axios.get(
           cat
-            ? `https://full-stack-ecommerce-o0a6m91tb-ankitnayan83.vercel.app/api/products?category=${cat}`
-            : `https://full-stack-ecommerce-o0a6m91tb-ankitnayan83.vercel.app/api/products`
+            ? `http://localhost:8080/api/products?category=${cat}`
+            : `http://localhost:8080/api/products`
         );
         setProduct(res.data);
       } catch (err) {
@@ -46,8 +48,6 @@ export const Products = ({ cat, filters, sort }) => {
       setFilteredProduct((prev) => [...prev].sort((a, b) => b.price - a.price));
     }
   }, [sort]);
-
-  console.log(filteredProduct);
   return (
     <div className="products">
       {cat

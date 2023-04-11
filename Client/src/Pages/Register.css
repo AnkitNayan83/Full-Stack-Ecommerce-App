@@ -1,52 +1,73 @@
-
-.register__info{
-    /* background-color: rgb(231, 228, 228); */
-    background-image: url("https://images.unsplash.com/photo-1524672353063-4f66ee1f385e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 90vh;
+.register__info {
+  /* background-color: rgb(231, 228, 228); */
+  background-image: url("https://images.unsplash.com/photo-1524672353063-4f66ee1f385e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
 }
 
-.register__info > h3{
-    color: black;
-    margin-bottom: 10px;
+.register {
+  position: relative;
 }
 
-.register__info > form{
-    padding: 10px;
-    width: 28%;
-    min-width: 300px;
-    background-color: rgb(241, 237, 237);
-    border-radius: 10px;
-    margin: 0 0 20px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+.loader_wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100vh;
+  width: calc(100vw - 23px);
+  background-color: rgba(211, 211, 211, 0.58);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.register__info > form > input{
-    margin: 15px 0;
-    width: 80%;
-    height: 30px;
-    border-radius: 10px;
-    border: none;
+.hide {
+  display: none;
 }
 
-
-.register__info > form > p{
-    margin: 15px 0;
+.register__info > h3 {
+  color: black;
+  margin-bottom: 10px;
 }
 
-.register__info > form > button{
-    width: 20%;
-    height: 30px;
-    border-radius: 10px;
-    background-color: black;
-    color: white;
+.register__info > form {
+  padding: 10px;
+  width: 28%;
+  min-width: 300px;
+  background-color: rgb(241, 237, 237);
+  border-radius: 10px;
+  margin: 0 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.register__info > form > input {
+  margin: 15px 0;
+  width: 80%;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+}
+
+.register__info > form > p {
+  margin: 15px 0;
+}
+
+.register__info > form > button {
+  width: 20%;
+  height: 30px;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
 }

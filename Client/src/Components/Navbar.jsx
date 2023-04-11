@@ -16,8 +16,6 @@ const Navbar = () => {
     dispatch(logOut({ user }));
   };
 
-  console.log(user);
-
   return (
     <div className="navbar">
       <div className="navbar__left">

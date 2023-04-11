@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Announcement from "../Components/Announcement";
 import Navbar from "../Components/Navbar";
 import { login } from "../Redux/apiCalls";
 import "./Login.css";
+import PacmanLoader from "react-spinners/PacmanLoader";
 
 export const Login = () => {
   const [username, setUsername] = useState("");
@@ -16,10 +16,21 @@ export const Login = () => {
     e.preventDefault();
     login(dispatch, { username, password });
   };
+
   return (
     <div className="login">
-      <Announcement />
       <Navbar />
+      <div className={isFetching ? "loader_wrapper" : "hide"}>
+        <PacmanLoader
+          loading={isFetching}
+          size={20}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+          className="loader"
+        />
+        <span>Please Wait it's a free server so it take time :( </span>
+      </div>
+
       <div className="login__info">
         <h3>Login :</h3>
         <form action="">
