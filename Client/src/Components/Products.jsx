@@ -7,16 +7,17 @@ export const Products = ({ cat, filters, sort }) => {
   const [product, setProduct] = useState([]);
   const [filteredProduct, setFilteredProduct] = useState([]);
 
-  // `https://full-stack-ecommerce-o0a6m91tb-ankitnayan83.vercel.app/api/products?category=${cat}`
-  // : `https://full-stack-ecommerce-o0a6m91tb-ankitnayan83.vercel.app/api/products`
+  //for local devlopment
+  // `http://localhost:8080/api/products?category=${cat}`
+  // : `http://localhost:8080/api/products`
 
   useEffect(() => {
     const getProduct = async () => {
       try {
         const res = await axios.get(
           cat
-            ? `http://localhost:8080/api/products?category=${cat}`
-            : `http://localhost:8080/api/products`
+            ? `https://full-stack-ecommerce-o0a6m91tb-ankitnayan83.vercel.app/api/products?category=${cat}`
+            : `https://full-stack-ecommerce-o0a6m91tb-ankitnayan83.vercel.app/api/products`
         );
         setProduct(res.data);
       } catch (err) {

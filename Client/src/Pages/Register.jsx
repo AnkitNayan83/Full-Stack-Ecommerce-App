@@ -56,6 +56,7 @@ export const Register = () => {
             By registering, I agree to the <br /> <strong>Terms and use</strong>{" "}
             &<strong>Privacy Policy</strong>
           </p>
+          {error && <span>Something went wrong please try again</span>}
           <button onClick={handelClick}>Register</button>
         </form>
       </div>

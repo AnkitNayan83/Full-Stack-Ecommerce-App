@@ -6,7 +6,6 @@ const jwt = require("jsonwebtoken");
 //Register
 
 router.post("/register", async (req, res) => {
-  await sleep(5000);
   const newUser = new User({
     username: req.body.username,
     email: req.body.email,
@@ -24,18 +23,17 @@ router.post("/register", async (req, res) => {
 });
 
 //Login
-
-function sleep(ms) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms);
-  });
-}
+// for local devlopment
+// function sleep(ms) {
+//   return new Promise((resolve) => {
+//     setTimeout(resolve, ms);
+//   });
+// }
 
 router.post("/login", async (req, res) => {
-  await sleep(5000);
+  // await sleep(5000);
   try {
     const user = await User.findOne({ username: req.body.username });
-    // console.log(user);
     if (!user) {
       res.status(401).json("Wrong Username or password");
       return;
